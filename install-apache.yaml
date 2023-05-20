@@ -3,7 +3,7 @@
   gather_facts: yes
   become: true
   tasks:
-    - name: Update repositories and upgrade OS
+    - name: Install Apache on targeted host
       ansible.builtin.apt:
         name: apache2
         state: latest
