@@ -5,6 +5,12 @@
   tasks:
     - name: Update repositories and upgrade OS
       ansible.builtin.apt:
-        name: "*"
+        name: apache2
         state: latest
         update_cache: yes
+    
+    - name: Start & enable Apache
+      ansible.builtin.systemd:
+        name: apache2
+        enabled: yes
+        state: started
