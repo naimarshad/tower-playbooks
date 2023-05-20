@@ -1,0 +1,10 @@
+- name: Update apt cache and upgrade OS
+  hosts: all
+  gather_facts: no
+  become: true
+  tasks:
+    - name: Update repositories and upgrade OS
+      ansible.builtin.apt:
+        name: "*"
+        state: latest
+        update_cache: yes
